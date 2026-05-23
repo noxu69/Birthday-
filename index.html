@@ -30,7 +30,7 @@
             padding-bottom: 6rem;
         }
 
-        /* Continuous Floating Sparkles & Hearts Background */
+        /* Continuous Floating Background Elements */
         .hearts-container {
             position: fixed;
             top: 0;
@@ -84,9 +84,9 @@
             100% { transform: translateY(-6px); }
         }
 
-        /* Premium Aesthetic Section Cards */
+        /* Section Cards */
         .section-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 24px;
             padding: 2.5rem 2rem;
             margin: 2.5rem auto;
@@ -96,7 +96,7 @@
         }
 
         .section-card:hover {
-            transform: translateY(-4px) scale(1.01);
+            transform: translateY(-4px);
             box-shadow: 0 16px 40px rgba(255, 107, 139, 0.18);
         }
 
@@ -104,13 +104,9 @@
             color: var(--pink-dark);
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
         }
 
-        /* 16 Years Dashboard Stats */
+        /* Lifetime Stats Dashboard */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -134,7 +130,59 @@
             color: #777;
         }
 
-        /* Interactive Balloon Pop Game */
+        /* NEW CAKE CUTTING SYSTEM */
+        .interactive-cake-wrapper {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+        }
+        .main-cake {
+            font-size: 6rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+            user-select: none;
+        }
+        .cake-left { left: 40%; display: none; }
+        .cake-right { left: 60%; display: none; }
+        
+        .candles-line {
+            font-size: 1.8rem;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 0.5s ease;
+            letter-spacing: 3px;
+        }
+        .knife-slider-container {
+            margin-top: 1.5rem;
+            padding: 0 2rem;
+        }
+        .knife-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 50px;
+            background: #ffccd5;
+            outline: none;
+        }
+        .knife-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--pink-dark);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        /* Balloon Pop Elements */
         .balloon-zone {
             display: flex;
             justify-content: center;
@@ -160,104 +208,60 @@
         .balloon:nth-child(2) { background: #ffafcc; animation-delay: 0.5s; }
         .balloon:nth-child(3) { background: #bde0fe; animation-delay: 1s; }
         .balloon:nth-child(4) { background: #cdb4db; animation-delay: 1.5s; }
-        
         .balloon::after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 32px;
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 8px solid currentColor;
-            opacity: 0.7;
+            content: ""; position: absolute; bottom: -8px; left: 32px;
+            border-left: 4px solid transparent; border-right: 4px solid transparent;
+            border-top: 8px solid currentColor; opacity: 0.7;
         }
-        .balloon.popped {
-            transform: scale(0);
-            opacity: 0;
-            pointer-events: none;
-        }
+        .balloon.popped { transform: scale(0); opacity: 0; pointer-events: none; }
         @keyframes floatSlightly {
             0% { transform: translateY(0); }
             100% { transform: translateY(-8px); }
         }
-        .pop-reveal {
-            margin-top: 1.5rem;
-            min-height: 24px;
+
+        /* NEW MULTI-PHOTO GALLERY CAROUSEL */
+        .carousel-container {
+            position: relative;
+            max-width: 320px;
+            margin: 2rem auto;
+            background: white;
+            padding: 16px 16px 50px 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border: 1px solid #f3f3f3;
+            border-radius: 4px;
+        }
+        .carousel-slide {
+            width: 100%;
+            height: 280px;
+            background: #fff0f3;
+            display: none;
+            align-items: center;
+            justify-content: center;
             font-weight: 600;
             color: var(--pink-dark);
-            font-style: italic;
-        }
-
-        /* Interactive Cake Section */
-        .cake-container {
-            margin: 1.5rem 0;
-        }
-        .cake-emoji {
-            font-size: 5.5rem;
-            display: inline-block;
-            position: relative;
-            user-select: none;
-        }
-        .candles {
-            font-size: 1.6rem;
-            position: absolute;
-            top: -28px;
-            left: 22px;
-            letter-spacing: 4px;
-            transition: all 0.4s ease;
-        }
-        .blow-btn {
-            background-color: var(--pink-dark);
-            color: white;
-            border: none;
-            padding: 0.8rem 2.2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 6px 20px rgba(255, 107, 139, 0.3);
-        }
-        .blow-btn:hover { 
-            background-color: var(--pink-accent); 
-            transform: scale(1.06);
-        }
-
-        /* Polaroid Photo Display */
-        .polaroid-frame {
-            background: white;
-            padding: 16px 16px 45px 16px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            transform: rotate(-2.5deg);
-            max-width: 300px;
-            margin: 2.5rem auto;
-            border: 1px solid #f3f3f3;
-            transition: transform 0.4s ease;
-        }
-        .polaroid-frame:hover {
-            transform: rotate(0deg) scale(1.06);
-        }
-        .polaroid-img {
-            width: 100%;
-            height: 260px;
-            background-color: #fff0f3;
             object-fit: cover;
             border-radius: 4px;
+        }
+        .carousel-slide.active { display: flex; }
+        .carousel-btn {
+            position: absolute;
+            bottom: 12px;
+            background: var(--pink-light);
+            border: 1px solid #ffccd5;
+            color: var(--pink-dark);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--pink-dark);
-            font-weight: 500;
         }
-        .polaroid-caption {
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 15px;
-            color: #555;
-        }
+        .btn-prev { left: 20px; }
+        .btn-next { right: 20px; }
 
-        /* Letter Presentation Box */
+        /* Secret Message Box */
         .gift-box {
             font-size: 5.5rem;
             cursor: pointer;
@@ -270,9 +274,7 @@
             0%, 100% { transform: rotate(0); }
             50% { transform: rotate(4deg); }
         }
-        .gift-box:hover {
-            transform: scale(1.15);
-        }
+        .gift-box:hover { transform: scale(1.15); }
         .hidden-message {
             display: none;
             margin-top: 1.5rem;
@@ -284,14 +286,10 @@
             border-radius: 20px;
             border-left: 6px solid var(--pink-dark);
             text-align: left;
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
         }
 
-        /* Bullet Points Override */
-        .reasons-list {
-            list-style: none;
-            text-align: left;
-        }
+        /* Bullet Points */
+        .reasons-list { list-style: none; text-align: left; }
         .reasons-list li {
             margin: 1.1rem 0;
             font-size: 1.1rem;
@@ -305,13 +303,7 @@
             color: var(--pink-accent);
             font-size: 1.3rem;
             margin-top: 1.5rem;
-            animation: popIn 0.4s ease-out;
         }
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
     </style>
 </head>
 <body>
@@ -320,16 +312,15 @@
 
     <div class="container">
         
-        <!-- Main Elegant Heading -->
+        <!-- Header -->
         <header>
             <h1>✨ Happy Birthday, Ritija! ✨</h1>
             <h2>Sweet 16 looks absolutely beautiful on you! 🎂</h2>
         </header>
 
-        <!-- NEW COMPONENT: Sweet 16 Dashboard Stats -->
+        <!-- Lifetime Excellence Stats -->
         <div class="section-card">
             <h3>📊 Ritija's Lifetime Excellence</h3>
-            <p style="color:#777; font-size:0.95rem;">Here is exactly how long you have been spreading brightness into the world:</p>
             <div class="stats-grid">
                 <div class="stat-box"><span class="stat-num">16</span><span class="stat-lbl">Years Old Today</span></div>
                 <div class="stat-box"><span class="stat-num">192</span><span class="stat-lbl">Months of Awesomeness</span></div>
@@ -338,21 +329,43 @@
             </div>
         </div>
 
-        <!-- Section 1: The Birthday Cake Interaction -->
+        <!-- NEW SYSTEM: 2-Step Cake Blowing & Cutting Ceremony -->
         <div class="section-card">
-            <h3>Make a Wish! 🕯️</h3>
-            <p style="color: #888; font-size: 0.9rem; margin-bottom: 12px;">Click the button below to blow out your candles!</p>
-            <div class="cake-container">
-                <div class="cake-emoji">
-                    <span class="candles" id="candles">🔥🕯️🔥</span>
-                    🎂
-                </div>
+            <h3>🎂 The Official Cake Ceremony</h3>
+            <p id="cakeInstructions" style="color: #888; font-size: 0.95rem;">Step 1: Click the button below to blow out your candles!</p>
+            
+            <div class="interactive-cake-wrapper">
+                <div class="candles-line" id="cakeCandles">🔥🕯️🔥</div>
+                <!-- Single Whole Cake -->
+                <div class="main-cake" id="wholeCake">🎂</div>
+                <!-- Slices for cutting transformation -->
+                <div class="main-cake cake-left" id="cakeLeft">🍰</div>
+                <div class="main-cake cake-right" id="cakeRight">🍰</div>
             </div>
-            <button class="blow-btn" onclick="blowCandles()">Blow out candles! ✨</button>
-            <p id="wishText" class="sweet-alert" style="display:none;">🎉 May all your sweetest dreams come true today! 🌟</p>
+
+            <button class="blow-btn" id="actionBtn" onclick="blowCandlesAction()">Blow out candles! ✨</button>
+            
+            <!-- Hidden interactive slice-slider element -->
+            <div class="knife-slider-container" id="sliderWrapper" style="display: none;">
+                <p style="color: var(--pink-dark); font-weight: 600; margin-bottom: 8px;">🔪 Slide right to cut your birthday cake!</p>
+                <input type="range" min="0" max="100" value="0" class="knife-slider" id="knifeCutSlider" oninput="handleCakeCutting(this.value)">
+            </div>
+
+            <p id="wishCelebrationText" class="sweet-alert" style="display:none;"></p>
         </div>
 
-        <!-- NEW COMPONENT: Pop-A-Balloon Virtual Compliment Machine -->
+        <!-- NEW SYSTEM: Multi-Photo Slide Gallery Frame -->
+        <!-- To insert actual photos: Replace the SVG values inside the src tags with file paths like "pic1.jpg", "pic2.jpg" -->
+        <div class="carousel-container">
+            <img class="carousel-slide active" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='%23ff6b8b'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>" alt="Memory 1">
+            <img class="carousel-slide" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='%23ff8fa3'><path d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/></svg>" alt="Memory 2">
+            <img class="carousel-slide" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='%23ff4757'><circle cx='12' cy='12' r='10'/></svg>" alt="Memory 3">
+            
+            <button class="carousel-btn btn-prev" onclick="shiftSlide(-1)">🌸</button>
+            <button class="carousel-btn btn-next" onclick="shiftSlide(1)">🌸</button>
+        </div>
+
+        <!-- Virtual Pop-A-Balloon Machine -->
         <div class="section-card">
             <h3>🎈 Pop a Birthday Balloon!</h3>
             <p style="color: #888; font-size: 0.9rem;">Tap the balloons to reveal hidden sweet messages just for you!</p>
@@ -362,20 +375,12 @@
                 <div class="balloon" onclick="popBalloon(this, 'Smart, cute, and turning 16! 🌟')">🎈</div>
                 <div class="balloon" onclick="popBalloon(this, 'The absolute best person in existence! 👑')">🎈</div>
             </div>
-            <div class="pop-reveal" id="popRevealText">Click a balloon above! 😊</div>
+            <div class="pop-reveal" id="popRevealText" style="margin-top: 1.5rem; font-weight: 600; color: var(--pink-dark);">Click a balloon above! 😊</div>
         </div>
 
-        <!-- Polaroid Framing Design -->
-        <!-- TO ADD IMAGE: Just name your image file "ritija.jpg" in GitHub and change src="ritija.jpg" below! -->
-        <div class="polaroid-frame">
-            <img class="polaroid-img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='%23ff6b8b'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>" alt="Ritija's Birthday Pic" id="displayPic">
-            <div class="polaroid-caption">Ritija ✨ Birthday Girl</div>
-        </div>
-
-        <!-- Section 2: Core Reasons List -->
+        <!-- Core Reasons List -->
         <div class="section-card">
             <h3>To My Favorite Person... 💕</h3>
-            <p style="margin-bottom: 1.5rem; color: #666;">Here are just a few reasons why you mean the absolute world to me:</p>
             <ul class="reasons-list">
                 <li>💖 Your smile literally brightens up my entire day.</li>
                 <li>💖 You have the kindest, cutest, most amazing heart.</li>
@@ -384,10 +389,9 @@
             </ul>
         </div>
 
-        <!-- Section 3: The Secret Surprise Letter Box -->
+        <!-- Surprise Letter Box -->
         <div class="section-card">
             <h3>Tap Your Birthday Gift! 🎁</h3>
-            <p style="color: #888; font-size: 0.9rem; margin-bottom: 15px;">(Click the box to open your special letter)</p>
             <div class="gift-box" id="giftBox" onclick="openGift()">🎁</div>
             
             <div class="hidden-message" id="secretLetter">
@@ -403,65 +407,106 @@
     </div>
 
     <script>
-        // 1. Floating Hearts Setup
+        // 1. Continuous Background Particle Generation
         const heartsContainer = document.getElementById('heartsContainer');
-        const heartEmojis = ['💖', '💝', '✨', '💕', '🌸', '❤️', '🌸', '🍭'];
+        const elementsPool = ['💖', '💝', '✨', '💕', '🌸', '❤️', '🎈'];
 
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 4) + 's'; 
-            heart.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
-            
-            heartsContainer.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 7000);
+        function spawnParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('heart');
+            particle.innerText = elementsPool[Math.floor(Math.random() * elementsPool.length)];
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            particle.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+            heartsContainer.appendChild(particle);
+            setTimeout(() => { particle.remove(); }, 7000);
         }
-        setInterval(createHeart, 300);
+        setInterval(spawnParticle, 300);
 
-        // 2. Blow Candles Animation Routine
-        function blowCandles() {
-            const candles = document.getElementById('candles');
-            const wishText = document.getElementById('wishText');
-            candles.innerText = '残留🕯️🕯️🕯️'; // Unlit version
+        // 2. Comprehensive Cake Logic Machine
+        let currentStep = 'unlit'; 
+
+        function blowCandlesAction() {
+            const candles = document.getElementById('cakeCandles');
+            const instructions = document.getElementById('cakeInstructions');
+            const actionBtn = document.getElementById('actionBtn');
+            const sliderWrapper = document.getElementById('sliderWrapper');
+
+            // Blow out step execution
             candles.innerText = '🕯️🕯️🕯️';
-            candles.style.opacity = '0.6';
-            wishText.style.display = 'block';
+            candles.style.opacity = '0.5';
             
-            // Blast bursts of hearts
-            for(let i=0; i<40; i++) {
-                setTimeout(createHeart, i * 30);
+            // Re-route controls to cutting procedure interface
+            actionBtn.style.display = 'none';
+            sliderWrapper.style.display = 'block';
+            instructions.innerText = 'Step 2: Use the slider tool below to cleanly cut the cake!';
+            
+            triggerMassiveBlast(25);
+        }
+
+        function handleCakeCutting(val) {
+            const wholeCake = document.getElementById('wholeCake');
+            const cakeLeft = document.getElementById('cakeLeft');
+            const cakeRight = document.getElementById('cakeRight');
+            const candles = document.getElementById('cakeCandles');
+            const celebText = document.getElementById('wishCelebrationText');
+            const instructions = document.getElementById('cakeInstructions');
+
+            if(val > 10) {
+                // Hide candles and original solid layout
+                wholeCake.style.display = 'none';
+                candles.style.opacity = '0';
+                
+                // Show sliding slice layouts
+                cakeLeft.style.display = 'block';
+                cakeRight.style.display = 'block';
+                
+                // Move slices dynamically based on input metric width values
+                let offset = val * 0.4;
+                cakeLeft.style.transform = `translate(calc(-50% - ${offset}px), -50%)`;
+                cakeRight.style.transform = `translate(calc(-50% + ${offset}px), -50%)`;
+            }
+
+            if(val == 100) {
+                instructions.innerText = 'Perfectly sliced! 🎂';
+                celebText.innerText = '🎉 Happy 16th Birthday Ritija! The cake is cut, time to celebrate! 🌟✨';
+                celebText.style.display = 'block';
+                triggerMassiveBlast(40);
             }
         }
 
-        // 3. Balloon Pop Engine
+        function triggerMassiveBlast(amount) {
+            for(let i=0; i<amount; i++) {
+                setTimeout(spawnParticle, i * 35);
+            }
+        }
+
+        // 3. Mini Carousel Layout Engine
+        let activeIndex = 0;
+        const slidesList = document.querySelectorAll('.carousel-slide');
+
+        function shiftSlide(direction) {
+            slidesList[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex + direction + slidesList.length) % slidesList.length;
+            slidesList[activeIndex].classList.add('active');
+        }
+
+        // 4. Auxiliary Balloon/Gift Controls
         function popBalloon(element, message) {
             element.classList.add('popped');
             document.getElementById('popRevealText').innerText = message;
-            
-            // Localized micro-burst of elements
-            for(let i=0; i<8; i++) {
-                setTimeout(createHeart, i * 20);
-            }
+            triggerMassiveBlast(10);
         }
 
-        // 4. Open Gift Frame
         function openGift() {
             const gift = document.getElementById('giftBox');
             const letter = document.getElementById('secretLetter');
-            
             if (letter.style.display === 'block') {
                 letter.style.display = 'none';
                 gift.innerText = '🎁';
             } else {
                 letter.style.display = 'block';
                 gift.innerText = '🔓💝';
-                setTimeout(() => {
-                    letter.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 150);
+                setTimeout(() => { letter.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 150);
             }
-        }
-    </script>
-</body>
-</html>
+  
